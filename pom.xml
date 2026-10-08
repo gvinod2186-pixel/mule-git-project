@@ -1,65 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="          http://maven.apache.org/POM/4.0.0          https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="
-         http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <modelVersion>4.0.0</modelVersion>
+	<groupId>com.mycompany</groupId>
+	<artifactId>mule-git-projects</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>mule-application</packaging>
 
-    <groupId>com.mycompany</groupId>
-    <artifactId>mule-git-projects</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>mule-application</packaging>
+	<name>mule-git-projects</name>
 
-    <name>mule-git-projects</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<app.runtime>4.9.0</app.runtime>
+		<mule.maven.plugin.version>4.10.1</mule.maven.plugin.version>
+	</properties>
 
-        <app.runtime>4.9.0</app.runtime>
-        <mule.maven.plugin.version>4.5.0</mule.maven.plugin.version>
-    </properties>
+	<dependencies>
+		<!-- Add Mule connectors here -->
+	</dependencies>
 
-    <dependencies>
-        <!-- Add Mule connectors here -->
-    </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.mule.tools.maven</groupId>
-                <artifactId>mule-maven-plugin</artifactId>
-                <version>${mule.maven.plugin.version}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <classifier>mule-application</classifier>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<repositories>
+		<repository>
+			<id>anypoint-exchange-v3</id>
+			<name>Anypoint Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+		</repository>
 
-    <repositories>
-        <repository>
-            <id>anypoint-exchange-v3</id>
-            <name>Anypoint Exchange</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
-        </repository>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases</name>
+			<url>https://repository.mulesoft.org/releases/</url>
+		</repository>
+	</repositories>
 
-        <repository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases</name>
-            <url>https://repository.mulesoft.org/releases/</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases</name>
-            <url>https://repository.mulesoft.org/releases/</url>
-        </pluginRepository>
-    </pluginRepositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases</name>
+			<url>https://repository.mulesoft.org/releases/</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
